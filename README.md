@@ -2,6 +2,7 @@
 
 # setup postgresql db
 
+`
 docker run \
   -p 5432:5432 \
   --name ory-hydra-db \
@@ -11,14 +12,17 @@ docker run \
   -d postgres:9.6
 
 hydra migrate sql --yes postgres://hydra:secret@192.168.86.24:5432/hydra?sslmode=disable
+`
 
 # run docker
-`
-docker run -it --rm -p 5002:5001 -v /Users/vtssogari/project/docker:/data test
 
 `
+docker run -it --rm -p 5002:5001 -v /Users/vtssogari/project/docker:/data test
+`
+
 ### run 
-` 
+
+`
 source /data/env.sh
 supervisord -c /etc/supervisor/conf.d/supervisord.conf 
 `
