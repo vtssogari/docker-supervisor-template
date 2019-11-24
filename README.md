@@ -1,3 +1,5 @@
+# This is template for running the multiple process in docker using hydra and node
+
 # setup postgresql db
 
 docker run \
@@ -10,13 +12,20 @@ docker run \
 
 hydra migrate sql --yes postgres://hydra:secret@192.168.86.24:5432/hydra?sslmode=disable
 
-# run program
+# run docker
+`
 docker run -it --rm -p 5002:5001 -v /Users/vtssogari/project/docker:/data test
 
-run.sh 
+`
+### run 
+` 
 source /data/env.sh
 supervisord -c /etc/supervisor/conf.d/supervisord.conf 
+`
 
+### supervisord -c /etc/supervisor/conf.d/supervisord.conf 
+
+`
 [supervisord]
 nodaemon=true
 logfile_maxbytes=0
@@ -38,3 +47,4 @@ stdout_logfile=/dev/stdout
 stdout_logfile_maxbytes=0
 stderr_logfile=/dev/stderr
 stderr_logfile_maxbytes=0
+`
