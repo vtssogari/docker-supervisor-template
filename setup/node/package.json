@@ -1,0 +1,86 @@
+{
+    "name": "oauth2",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "author": "",
+    "license": "ISC",
+    "scripts": {
+      "start": "react-scripts start",
+      "build-server": "tsc --esModuleInterop true --outDir server-build server/server.ts",
+      "build": "concurrently \"npm run build-server\" \"react-scripts build\" ",
+      "test": "react-scripts test",
+      "eject": "react-scripts eject",
+      "server": "ts-node-dev --project ./tsconfig.node.json --inspect --respawn ./server/server.ts",
+      "dev": "concurrently --kill-others-on-fail \"npm run server\" \"npm run start\""
+    },
+    "eslintConfig": {
+      "extends": "react-app"
+    },
+    "browserslist": {
+      "production": [
+        ">0.2%",
+        "not dead",
+        "not op_mini all"
+      ],
+      "development": [
+        "last 1 chrome version",
+        "last 1 firefox version",
+        "last 1 safari version"
+      ]
+    },
+    "devDependencies": {
+      "@types/compression": "^1.0.1",
+      "@types/dotenv": "^8.2.0",
+      "@types/express": "^4.17.2",
+      "@types/express-http-proxy": "^1.5.12",
+      "@types/express-pino-logger": "^4.0.2",
+      "@types/express-session": "^1.15.15",
+      "@types/express-winston": "^4.0.0",
+      "@types/fs-extra": "^8.0.1",
+      "@types/jest": "24.0.21",
+      "@types/lusca": "^1.6.1",
+      "@types/node": "12.12.5",
+      "@types/node-fetch": "^2.5.3",
+      "@types/pino": "^5.8.13",
+      "@types/react": "16.9.11",
+      "@types/react-bootstrap-table": "^4.3.7",
+      "@types/react-dom": "16.9.3",
+      "@types/react-toastify": "^4.1.0",
+      "@types/shelljs": "^0.8.6",
+      "@types/winston": "^2.4.4",
+      "babel-jest": "^23.6.0",
+      "concurrently": "^5.0.0",
+      "fs-extra": "^8.1.0",
+      "nodemon": "^1.19.4",
+      "npm-run-all": "^4.1.5",
+      "react-scripts": "2.1.7",
+      "rimraf": "^3.0.0",
+      "shelljs": "^0.8.3",
+      "ts-node-dev": "^1.0.0-pre.44",
+      "typescript": "^3.7.2"
+    },
+    "dependencies": {
+      "axios": "^0.19.0",
+      "bootstrap": "^4.3.1",
+      "compression": "^1.7.4",
+      "dotenv": "^8.2.0",
+      "express": "^4.17.1",
+      "express-http-proxy": "^1.6.0",
+      "express-pino-logger": "^4.0.0",
+      "express-session": "^1.17.0",
+      "express-winston": "^4.0.1",
+      "lusca": "^1.6.1",
+      "node-fetch": "^2.6.0",
+      "openid-client": "^3.8.3",
+      "pino": "^5.13.6",
+      "querystring": "^0.2.0",
+      "react": "^16.11.0",
+      "react-bootstrap-table": "^4.3.1",
+      "react-dom": "^16.11.0",
+      "react-toastify": "^5.4.1",
+      "session": "^0.1.0",
+      "winston": "^3.2.1"
+    },
+    "proxy": "http://localhost:8080"
+  }
